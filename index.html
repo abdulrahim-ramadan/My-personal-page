@@ -11,7 +11,17 @@
     <link rel="stylesheet" href="css/styles.css">
     <!---BOX ICONSs-->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
+    <!-- EMAILJS EMAILING SYSTEM API -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "sKJmgY1XfTiaPJCKM",
+      });
+   })();
+</script>
     
 
   </head>
@@ -179,16 +189,16 @@
                             <span class="contact__text">Munich</span>
                         </div>
     
-                        <form action="" class="contact__form">
+                        <div  class="contact__form">
                             <div class="contact__inputs">
-                                <input type="text" placeholder="Name" class="contact__input">
-                                <input type="mail" placeholder="Email" class="contact__input">
+                                <input type="text" placeholder="Name" class="contact__input" id="name">
+                                <input type="text" placeholder="Email" class="contact__input" id="mail">
                             </div>
     
-                            <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                            <textarea name="" id="message" cols="0" rows="10" class="contact__input"></textarea>
     
-                            <input type="submit" value="Enviar" class="contact__button">
-                        </form>
+                            <input type="submit" value="Enviar" class="contact__button" onclick="sendMail()">
+                        </div>
                     </div>
                 </section>
             </main>
@@ -224,6 +234,7 @@
     
                 <!-- MAIN JS -->
                 <script src="js/main.js"></script>
+                <script src="js/email.js"></script>
     
   </body>
 </html>
